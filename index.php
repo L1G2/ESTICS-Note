@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+    define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
+    require_once(ROOT.'models/config.php');
+    require_once(ROOT.'views/template.php');
+
