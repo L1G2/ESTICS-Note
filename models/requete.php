@@ -32,5 +32,4 @@ class REQUETE extends CONNECT_BDD
    /*
     Une fonciton ajotera un nouvelle enseignant au Bae donnée.
    */
-
-
+}
