@@ -14,12 +14,10 @@ class REQUETE extends CONNECT_BDD
     */
    public function signIn( $email, $mdp){
 
-
-
         $bdd =$this -> dbConnect();
         $sql = $bdd -> prepare ("SELECT prenomEnseignant FROM enseignant WHERE prenomEnseignant = ? AND mdpEnseignant = ?");
         $sql -> execute(array($email,$mdp));
-        $info =$sql->fetch()[0];
+        $info = $sql -> fetch()[0];
 
         if (isset($info)){
             return $info;
