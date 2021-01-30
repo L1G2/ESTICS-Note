@@ -31,7 +31,7 @@
 				<div class="login-reg-bg">
 					<div class="log-reg-area sign">
 						<h2 class="log-title">Se connecter</h2>
-						<form role="form" action="Controlleur/controller.php?action=login" method="post">
+						<form role="form" action="Controller/controller.php?action=login" method="post">
 							<div class="form-group">	
 							  <input type="email" id="input" value="<?php echo ""; ?>" name="email" required/>
 							  <label class="control-label" for="email"> Email professionel</label><i class="mtrl-select"></i>
@@ -47,7 +47,7 @@
 							</div>
 							<a href="#" title="" class="forgot-pwd">Mot de passe oublié</a>
 							<div class="submit-btns">
-								<button class="mtr-btn signin" type="button"><span>Se connecter</span></button>
+								<input class="mtr-btn signin" type="submit" value ="Se connecter"/>
 							</div>
 							<span class="help-block">
 								<?php

@@ -120,7 +120,3 @@ class REQUETE extends CONNECT_BDD
 
 
 }
-
-$req = new REQUETE ;
-$test= $req -> getSemestre();
-print_r($test);

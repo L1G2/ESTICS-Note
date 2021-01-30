@@ -7,7 +7,7 @@
                 $email = $_POST["email"];
                 $password = $_POST["password"];
                 if(preg_match("#^[a-z0-9._-]+@esti.mg+$#",$mail)){
-                    $query = new CONNECT_BDD;
+                    $query = new REQUETE;
                     $login = $query->login($email, $password);
                     if($login === false){
                         header("location:../index.php?action=erreur_identification");
