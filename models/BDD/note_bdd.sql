@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 29 jan. 2021 à 18:56
+-- Généré le : sam. 30 jan. 2021 à 17:31
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -101,7 +101,7 @@ DROP TABLE IF EXISTS `matiere`;
 CREATE TABLE IF NOT EXISTS `matiere` (
   `idMatiere` int(11) NOT NULL AUTO_INCREMENT,
   `nomMatiere` varchar(100) NOT NULL,
-  `coeffMatiere` int(11) NOT NULL,
+  `codeMatiere` varchar(50) NOT NULL,
   PRIMARY KEY (`idMatiere`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -109,9 +109,9 @@ CREATE TABLE IF NOT EXISTS `matiere` (
 -- Déchargement des données de la table `matiere`
 --
 
-INSERT INTO `matiere` (`idMatiere`, `nomMatiere`, `coeffMatiere`) VALUES
-(1, 'BASE DE DONNEES RELATIONNELLES', 4),
-(2, 'LANGAGE DE PROGRAMMATION DYNAMIQUE', 3);
+INSERT INTO `matiere` (`idMatiere`, `nomMatiere`, `codeMatiere`) VALUES
+(1, 'BASE DE DONNEES RELATIONNELLES', 'INFO_255'),
+(2, 'LANGAGE DE PROGRAMMATION DYNAMIQUE', 'MATHS_2225');
 
 -- --------------------------------------------------------
 
@@ -127,6 +127,8 @@ CREATE TABLE IF NOT EXISTS `note` (
   `idRaison` int(11) NOT NULL,
   `valeurNote` int(20) NOT NULL,
   `dateNote` date NOT NULL,
+  `semestreNote` int(11) NOT NULL,
+  `coeffNote` int(11) NOT NULL,
   PRIMARY KEY (`idNote`),
   KEY `idEtudiant` (`idEtudiant`),
   KEY `idRaison` (`idRaison`)
@@ -136,11 +138,11 @@ CREATE TABLE IF NOT EXISTS `note` (
 -- Déchargement des données de la table `note`
 --
 
-INSERT INTO `note` (`idNote`, `idEtudiant`, `idMatiere`, `idRaison`, `valeurNote`, `dateNote`) VALUES
-(1, 1, 1, 1, 18, '2021-01-05'),
-(2, 1, 1, 2, 4, '2021-01-11'),
-(3, 2, 1, 1, 18, '2021-01-18'),
-(4, 2, 1, 2, 20, '2021-01-15');
+INSERT INTO `note` (`idNote`, `idEtudiant`, `idMatiere`, `idRaison`, `valeurNote`, `dateNote`, `semestreNote`, `coeffNote`) VALUES
+(1, 1, 1, 1, 18, '2021-01-05', 1, 4),
+(2, 1, 1, 2, 4, '2021-01-11', 2, 2),
+(3, 2, 1, 1, 18, '2021-01-18', 2, 0),
+(4, 2, 1, 2, 20, '2021-01-15', 2, 0);
 
 -- --------------------------------------------------------
 
