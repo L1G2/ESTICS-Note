@@ -72,7 +72,8 @@
 											<?php
 										}
 									}
-							?>
+								?>
+							</span>
 						</form>
 					</div>
 				</div>

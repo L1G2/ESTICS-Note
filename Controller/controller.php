@@ -7,13 +7,14 @@
                 $email = $_POST["email"];
                 $password = $_POST["password"];
                 if(preg_match("#^[a-z0-9._-]+@esti.mg+$#",$mail)){
-                    $query = new Query_bdd;
-                    $login = $query->authentification($email, $password);
+                    $query = new CONNECT_BDD;
+                    $login = $query->login($email, $password);
                     if($login === false){
-                        header("location:../erreur_identification");
+                        header("location:../index.php?action=erreur_identification");
                     }
                     else{
-                        $_SESSION["username"] = $login 
+                        $_SESSION["username"] = $login
+                        header("location:../index.php?action=login_success")
                     }
                 }else{
 					header("location:../index.php?action=erreur_mail");

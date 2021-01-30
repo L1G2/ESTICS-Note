@@ -14,7 +14,7 @@ class REQUETE extends CONNECT_BDD
       Cette fonction retourne l'user_name de l'enseignant si a bien été authentifié et false sinon.
 
     */
-   public function signIn( $email, $mdp){
+   public function login( $email, $mdp){
 
         $bdd =$this -> dbConnect();
         $sql = $bdd -> prepare ("SELECT prenomEnseignant FROM enseignant WHERE prenomEnseignant = ? AND mdpEnseignant = ?");
