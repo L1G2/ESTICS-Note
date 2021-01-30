@@ -33,11 +33,11 @@
 						<h2 class="log-title">Se connecter</h2>
 						<form role="form" action="Controller/controller.php?action=login" method="post">
 							<div class="form-group">	
-							  <input type="email" id="input" value="<?php echo ""; ?>" name="email" required/>
+							  <input type="email" id="input"  name="email" required/>
 							  <label class="control-label" for="email"> Email professionel</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-group">	
-							  <input type="password" value="<?php echo ""; ?>" name="password" required/>
+							  <input type="password"  name="password" required/>
 							  <label class="control-label" for="input"> Mot de passe</label><i class="mtrl-select"></i>
 							</div>
 							<div class="checkbox">
@@ -46,34 +46,23 @@
 							  </label>
 							</div>
 							<a href="#" title="" class="forgot-pwd">Mot de passe oublié</a>
-							<div class="submit-btns">
-								<input class="mtr-btn signin" type="submit" value ="Se connecter"/>
-							</div>
-							<span class="help-block">
+							<span class="help-block" style="color:red">
 								<?php
 									if(!empty($_GET["action"])){
-										$email = $_POST["email"];
 										$action = htmlspecialchars($_GET["action"]);
 										if($action == "erreur_mail"){
-											?>
-												<br><span>Veuillez utilisé le mail de l'ESTI</span>
-											<?php
-										}elseif($action == "mdp_short"){
-											?>
-												<br><span>Mot de passe trop court</span>
-											<?php
+											echo("<br><span>Veuillez utilisé le mail de l'ESTI</span>");
 										}elseif($action == "erreur_identification"){
-											?>
-												<br><span>Vérifier votre email ou votre mot de passe</span>
-											<?php
+											echo("<br><span>Vérifier votre email ou votre mot de passe</span>");
 										}elseif($action == "login_success"){
-											?>
-												<br><span>Inscription avec succée</span>
-											<?php
+											echo("<br><span>Inscription avec succée</span>");
 										}
 									}
 								?>
 							</span>
+							<div class="submit-btns">
+								<input class="mtr-btn signin" type="submit" value ="Se connecter"/>
+							</div>
 						</form>
 					</div>
 				</div>
