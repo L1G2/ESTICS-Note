@@ -10,7 +10,10 @@
                     $query = new Query_bdd;
                     $login = $query->authentification($email, $password);
                     if($login === false){
-                        echo "Erreur inscription";
+                        header("location:../erreur_identification");
+                    }
+                    else{
+                        $_SESSION["username"] = $login 
                     }
                 }else{
 					header("location:../index.php?action=erreur_mail");
