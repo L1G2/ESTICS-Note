@@ -127,13 +127,13 @@
                                             </div>
                                         </aside>
                                     </div><!-- sidebar -->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-9">
                                         <div class="central-meta">       
                                             <form action="test.php" method="get">
-                                                <div class="general-setting">
-                                                    <ul>
-                                                        <li>Raison =
-                                                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="raisons">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label for="inputRaison">Raison </label>
+                                                            <select class="form-control" name="raisons" id="inputRaison">
                                                                 <?php                 
                                                                     $raisons =$req-> getRaison();
                                                                     foreach ($raisons [0] as $cle => $element){
@@ -141,20 +141,25 @@
                                                                     }                   
                                                                 ?>      
                                                             </select>
-                                                        </li>
-                                                        <li>Semestre =
-                                                            <select name="semestres" id="">
+                                                    </div>
+                                                    <div class="col">
+                                                        <label for="inputSemestre">Semestre </label>
+                                                            <select class="form-control" name="semestres" id="inputSemestre">
                                                                 <?php                 
                                                                     $semestres =$req-> getSemestre();
                                                                     foreach ($semestres [0] as $cle => $element){
                                                                         echo '<option value="' .  $element . '">'. $semestres[1][$cle] . '</option>' ;
                                                                     }?>      
                                                             </select>
-                                                        </li>    
-                                                        <li>Coefficiant =
-                                                            <input type="text" name="coeffNote" id="" required/>
-                                                        </li>
-                                                    </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label for="inputCoeff">Coefficient</label>
+                                                        <input class="form-control" type="text" name="coeffNote" id="inputCoeff" required/>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label for="inputCoeff">Date</label>
+                                                        <input class="form-control" value type="month" value="juin 2021" name="coeffNote" id="inputCoeff" required/>
+                                                    </div>
                                                 </div>
                                                 <table>
                                                     <tr>
