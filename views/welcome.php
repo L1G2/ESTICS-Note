@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,7 +45,7 @@
                         <li><a href="#" title="">Acceuil</a></li>
                         <li><a href="#" title="">Liste</a></li>
                         <li><a href="#" title="">Historique</a></li>
-                        <li><a href="#" title="">Ajout de note</a></li>
+                        <li><a href="../Views/ajout.php" title="">Ajout de note</a></li>
                     </ul>
                     <ul class="setting-area">
                         <li>

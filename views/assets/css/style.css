@@ -9286,4 +9286,11 @@ aside.sidebar.full-style {
     text-transform: uppercase;
 }
 
+.general-setting{
+    display: block;
+}
 
+.general-setting > ul > li{
+    text-decoration: none;
+    display: inline-block;
+}

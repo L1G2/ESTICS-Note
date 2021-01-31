@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    require_once("../Models/requete.php");
+    echo($_SESSION["username"]);
+    $req= new REQUETE;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -121,16 +127,60 @@
                                             </div>
                                         </aside>
                                     </div><!-- sidebar -->
-                                    <div class="col-lg-5 ">
-                                        <div class="central-meta">
+                                    <div class="col-lg-8">
+                                        <div class="central-meta">       
+                                            <form action="test.php" method="get">
+                                                <div class="general-setting">
+                                                    <ul>
+                                                        <li>Raison =
+                                                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="raisons">
+                                                                <?php                 
+                                                                    $raisons =$req-> getRaison();
+                                                                    foreach ($raisons [0] as $cle => $element){
+                                                                        echo '<option value="' .  $element . '">'. $raisons[1][$cle] . '</option>' ;
+                                                                    }                   
+                                                                ?>      
+                                                            </select>
+                                                        </li>
+                                                        <li>Semestre =
+                                                            <select name="semestres" id="">
+                                                                <?php                 
+                                                                    $semestres =$req-> getSemestre();
+                                                                    foreach ($semestres [0] as $cle => $element){
+                                                                        echo '<option value="' .  $element . '">'. $semestres[1][$cle] . '</option>' ;
+                                                                    }?>      
+                                                            </select>
+                                                        </li>    
+                                                        <li>Coefficiant =
+                                                            <input type="text" name="coeffNote" id="" required/>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <table>
+                                                    <tr>
+                                                        <th>N</th>
+                                                        <th>Etudiant</th>
+                                                        <th>Note</th>
+                                                    </tr>
+                                                    <?php 
+                                                    
+                                                    $etudiant =$req-> getEtudiant();
+                                                    foreach ($etudiant [0] as $cle => $element){
+                                                        echo '<tr> <td>' .  $element . '</td><td>'. $etudiant[1][$cle] . '</td><td><input type="text" name="'.$element.'" id="" required> </td> </tr> </br>' ;
+                                                    }?>
+                                                </table>
 
+                                                <button type="submit">Envoyer</button>
+                                            </form>
                                         </div>
                                     </div>
                                     
                                     <!-- Troisieme collone --> 
 <!--                                     <div class="col-lg-4">
                                         <aside class="central-meta">
-                                            <?php include('chart.php')?>
+                                            <?php 
+                                                // include('chart.php');
+                                            ?>
                                         </aside>
                                     </div> -->
                                 </div>	
