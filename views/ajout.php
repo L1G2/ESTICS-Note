@@ -130,6 +130,7 @@
                                     <div class="col-lg-9">
                                         <div class="central-meta">       
                                             <form action="test.php" method="get">
+                                                <h4 class="title-content">Information générale sur la note</h4>
                                                 <div class="form-row">
                                                     <div class="col">
                                                         <label for="inputRaison">Raison </label>
@@ -161,20 +162,10 @@
                                                         <input class="form-control" value type="month" value="juin 2021" name="coeffNote" id="inputCoeff" required/>
                                                     </div>
                                                 </div>
-                                                <table>
-                                                    <tr>
-                                                        <th>N</th>
-                                                        <th>Etudiant</th>
-                                                        <th>Note</th>
-                                                    </tr>
-                                                    <?php 
-                                                    
-                                                    $etudiant =$req-> getEtudiant();
-                                                    foreach ($etudiant [0] as $cle => $element){
-                                                        echo '<tr> <td>' .  $element . '</td><td>'. $etudiant[1][$cle] . '</td><td><input type="text" name="'.$element.'" id="" required> </td> </tr> </br>' ;
-                                                    }?>
-                                                </table>
-
+                                                <h4 class="title-content">Note de chaque étudiant</h4>
+                                                <?php
+                                                    include('table.php')
+                                                ?>
                                                 <button type="submit">Envoyer</button>
                                             </form>
                                         </div>
