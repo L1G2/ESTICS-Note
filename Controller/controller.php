@@ -1,6 +1,7 @@
 <?php
+session_start();
     require_once("../Models/requete.php");
-
+    
     if(!empty($_GET["action"])){
         $action = $_GET["action"];
         if($action == "login"){
@@ -15,11 +16,12 @@
                     }
                     else{
                         $_SESSION["username"] = $login;
-                        header("location:../Views/welcome.php");
+                        header("location:../Views/ajoutNote.php");
                     }
                 }else{
                     header("location:../index.php?action=erreur_mail");
                 }
             }
         }
-    }
+        }
+    

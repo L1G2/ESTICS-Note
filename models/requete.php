@@ -42,10 +42,9 @@ class REQUETE extends CONNECT_BDD
     $sql = $bdd -> prepare ("SELECT codeMatiere FROM matiere INNER JOIN enseignant ON enseignant.idMatiere=matiere.idMatiere WHERE enseignant.prenomEnseignant=?");
     $sql -> execute(array($prenomEnseignant));
     $info =$sql->fetch()[0];
-
     return $info;
-
-
+    
+    
    }
    /*
 
@@ -67,10 +66,10 @@ class REQUETE extends CONNECT_BDD
             array_push($nom_prenomEtudiants,$raison["nom_prenomEtudiant"]);  
         } 
 
-       return [$numEtudiants, $nom_prenomEtudiants] ;
+       return [$numEtudiants, $nom_prenomEtudiants]; 
    }
 
-
+ 
    /*
 
         Une fonction qui récupère tout le  le raison de la note. Il reoturne dans un tableau 
@@ -88,9 +87,10 @@ class REQUETE extends CONNECT_BDD
        while ($raison=$getRaison->fetch()){
                 array_push($raisons,$raison["nomRaison"]); 
                 array_push ($idRaisons,$raison["idRaison"]);      
-       } 
-
+       }
        return  [$idRaisons,$raisons];
+       
+       
 
    }
 
@@ -100,7 +100,7 @@ class REQUETE extends CONNECT_BDD
 
    public function getSemestre (){
 
-        $value=array();
+        $value=array(); 
         $text=array();
         $bdd = $this->dbConnect();
         $getSemestre= $bdd -> query ("SELECT DISTINCT semestreNote as value ,CONCAT('Semestre ', semestreNote) as text FROM note order by semestreNote");
@@ -117,6 +117,5 @@ class REQUETE extends CONNECT_BDD
    public function InsertNote( $idRaison, $coeffNote,$semestreNote, $idEtudiant, $valeurNote ){
        return 1;
    }
-
 
 }
