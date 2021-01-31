@@ -15,7 +15,7 @@
                     }
                     else{
                         $_SESSION["username"] = $login;
-                        header("location:../Views/welcome.php");
+                        require_once('../Views/welcome.php');
                     }
                 }else{
                     header("location:../index.php?action=erreur_mail");
