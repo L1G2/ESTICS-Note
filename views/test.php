@@ -1,10 +1,12 @@
 <?php
     session_start();
     require_once("../Models/requete.php");
- if (isset($_GET["raisons"])&&isset($_GET["semestres"])&&isset($_GET["coeffNote"])){
+ if (isset($_GET["raisons"])&&isset($_GET["semestres"])&&isset($_GET["coeffNote"])&&isset($_GET['dateNote'])){
      $raison=intval($_GET["raisons"]);
      $semestre=intval($_GET["semestres"]);
      $coeffNote=intval($_GET["coeffNote"]);
+     $dateNote=$_GET['dateNote'];
+     
 
 
      $req= new REQUETE;
@@ -16,10 +18,12 @@
          if (isset($_GET[$element])){
             $idMatiere =$req-> getidMatiere($_SESSION["username"]);
             $valeurNote=intval($_GET[$element]);
-            $req -> insertNote($raison, $coeffNote,$semestre, $element,$idMatiere, $valeurNote );
+            $req -> insertNote($raison, $coeffNote,$semestre, $element,$idMatiere,$dateNote, $valeurNote );
+
         }
      }
-
+     
+     
 
 
 

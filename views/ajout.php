@@ -145,11 +145,8 @@
                                                     <div class="col">
                                                         <label for="inputSemestre">Semestre </label>
                                                             <select class="form-control" name="semestres" id="inputSemestre">
-                                                                <?php                 
-                                                                    $semestres =$req-> getSemestre();
-                                                                    foreach ($semestres [0] as $cle => $element){
-                                                                        echo '<option value="' .  $element . '">'. $semestres[1][$cle] . '</option>' ;
-                                                                    }?>      
+                                                                    <option value="1">Semestre 1</option>
+                                                                    <option value="2">emestre 2</option>
                                                             </select>
                                                     </div>
                                                     <div class="col">
@@ -158,7 +155,7 @@
                                                     </div>
                                                     <div class="col">
                                                         <label for="inputCoeff">Date</label>
-                                                        <input class="form-control" value type="month" value="juin 2021" name="coeffNote" id="inputCoeff" required/>
+                                                        <input class="form-control" value type="date" value="" name="dateNote" id="inputCoeff" required/>
                                                     </div>
                                                 </div>
                                                 <table>

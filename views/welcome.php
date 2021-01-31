@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -43,7 +41,7 @@
                 <div class="top-area">
                     <ul class="main-menu">
                         <li><a href="#" title="">Acceuil</a></li>
-                        <li><a href="#" title="">Liste</a></li>
+                        <li><a href="../Views/liste.php" title="">Liste</a></li>
                         <li><a href="#" title="">Historique</a></li>
                         <li><a href="../Views/ajout.php" title="">Ajout de note</a></li>
                     </ul>

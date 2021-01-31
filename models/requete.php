@@ -114,12 +114,13 @@ class REQUETE extends CONNECT_BDD
 
 }
 
-   public function insertNote( $idRaison, $coeffNote,$semestreNote, $idEtudiant,$idMatiere, $valeurNote ){
+   public function insertNote( $idRaison, $coeffNote,$semestreNote, $idEtudiant,$idMatiere,$dateNote, $valeurNote ){
 
 
     $bdd = $this->dbConnect();
-    $insertNote= $bdd -> prepare ("INSERT INTO note (idRaison, coeffNote, semestreNote,idEtudiant , idMatiere,dateNote,valeurNote) VALUE (?,?,?,?,?,CURDATE(),?)");
-    $insertNote -> execute(array($idRaison,$coeffNote, $semestreNote, $idEtudiant, $idMatiere,$valeurNote));
+    $insertNote= $bdd -> prepare ("INSERT INTO note (idRaison, coeffNote, semestreNote,idEtudiant , idMatiere,dateNote,valeurNote) VALUE (?,?,?,?,?,?,?)");
+    $insertNote -> execute(array($idRaison,$coeffNote, $semestreNote, $idEtudiant, $idMatiere,$dateNote,$valeurNote));
+    print_r ($insertNote);
     
    }
 
@@ -134,5 +135,54 @@ class REQUETE extends CONNECT_BDD
     return $info;
 
    }
+
+   public function getNoteCtrl(){
+        $num=array();
+        $nom_prenom=array();
+        $valeurNote=array();
+        $bdd = $this->dbConnect();
+        $getNoteCtrl= $bdd -> query ("
+        SELECT etudiant.idEtudiant as Num ,CONCAT(prenomEtudiant,' ',nomEtudiant )as 'Nom et prenom' , AVG(note.valeurNote) AS valeurNote 
+        from etudiant 
+        inner JOIN note 
+        on note.idEtudiant=etudiant.idEtudiant 
+        inner JOIN raison 
+        on raison.idRaison= note.idRaison 
+        WHERE note.idRaison = 1
+        GROUP BY etudiant.idEtudiant");
+
+        while ($Ctrl=$getNoteCtrl->fetch()){
+                array_push($num,$Ctrl["Num"]); 
+                array_push ($nom_prenom,$Ctrl["Nom et prenom"]);  
+                array_push ($valeurNote,$Ctrl["valeurNote"]);      
+        }
+        return  [$num,$nom_prenom,$valeurNote];
+    }
+    public function getNoteExam (){
+        $num=array();
+        $nom_prenom=array();
+        $valeurNote=array();
+        $bdd = $this->dbConnect();
+        $getNoteExam= $bdd -> query ("
+        SELECT etudiant.idEtudiant as Num ,CONCAT(prenomEtudiant,' ',nomEtudiant )as 'Nom et prenom' ,raison.nomRaison, AVG(note.valeurNote) AS valeurNote 
+        from etudiant 
+        inner JOIN note 
+        on note.idEtudiant=etudiant.idEtudiant 
+        inner JOIN raison 
+        on raison.idRaison= note.idRaison 
+        WHERE note.idRaison = 2
+        GROUP BY etudiant.idEtudiant");
+
+        while ($Exam=$getNoteExam->fetch()){
+                array_push($num,$Exam["Num"]); 
+                array_push ($nom_prenom,$Exam["Nom et prenom"]);  
+                array_push ($valeurNote,$Exam["valeurNote"]);      
+        }
+        return  [$num,$nom_prenom,$valeurNote];
+
+
+}
+
+
 
 }

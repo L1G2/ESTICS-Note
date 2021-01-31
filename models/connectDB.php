@@ -6,9 +6,9 @@
 
             if (!isset($DB_HOST)) {
                 $DB_HOST = 'localhost';
-                $DB_USER = 'estics';
-                $DB_PASS = '__estics__';
-                $DB_NAME = 'ESTICS';
+                $DB_USER = 'root';
+                $DB_PASS = '';
+                $DB_NAME = 'note_bdd';
             } 
             try{
                 $pdo = new PDO("mysql:host=" . $DB_HOST . ";dbname=" . $DB_NAME, $DB_USER, $DB_PASS);
