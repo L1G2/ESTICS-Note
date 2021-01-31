@@ -114,8 +114,25 @@ class REQUETE extends CONNECT_BDD
 
 }
 
-   public function InsertNote( $idRaison, $coeffNote,$semestreNote, $idEtudiant, $valeurNote ){
-       return 1;
+   public function insertNote( $idRaison, $coeffNote,$semestreNote, $idEtudiant,$idMatiere, $valeurNote ){
+
+
+    $bdd = $this->dbConnect();
+    $insertNote= $bdd -> prepare ("INSERT INTO note (idRaison, coeffNote, semestreNote,idEtudiant , idMatiere,dateNote,valeurNote) VALUE (?,?,?,?,?,CURDATE(),?)");
+    $insertNote -> execute(array($idRaison,$coeffNote, $semestreNote, $idEtudiant, $idMatiere,$valeurNote));
+    
+   }
+
+   public function getidMatiere($prenomEnseignant){
+
+    $bdd =$this -> dbConnect();
+    $sql = $bdd -> prepare ("SELECT idMatiere from  enseignant WHERE prenomEnseignant=?");
+    $sql -> execute(array($prenomEnseignant));
+    $info = $sql -> fetch()[0];
+
+
+    return $info;
+
    }
 
 }
