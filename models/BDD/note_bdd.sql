@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 30 jan. 2021 à 17:31
+-- Généré le : Dim 31 jan. 2021 à 13:30
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
   `prenomEtudiant` char(100) NOT NULL,
   PRIMARY KEY (`idEtudiant`),
   KEY `idClasse` (`idClasse`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `etudiant`
@@ -89,7 +89,12 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
 
 INSERT INTO `etudiant` (`idEtudiant`, `idClasse`, `nomEtudiant`, `prenomEtudiant`) VALUES
 (1, 1, 'RAJAONARIVONY', 'Rivo Lalaina'),
-(2, 1, 'BOTORAVONY', 'Arlème Johnson');
+(2, 1, 'BOTORAVONY', 'Arlème Johnson'),
+(3, 1, 'TAFITASOA', ' FABRICE'),
+(4, 1, 'RAKOTOARISON', 'Tahaiana'),
+(5, 1, 'MANAMBINA', 'Miharintsoa'),
+(6, 1, 'RAJAOANARIVOSONA', 'Tsiaro'),
+(7, 1, 'MANAFIKA', 'Foyer');
 
 -- --------------------------------------------------------
 
@@ -132,17 +137,48 @@ CREATE TABLE IF NOT EXISTS `note` (
   PRIMARY KEY (`idNote`),
   KEY `idEtudiant` (`idEtudiant`),
   KEY `idRaison` (`idRaison`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `note`
 --
 
 INSERT INTO `note` (`idNote`, `idEtudiant`, `idMatiere`, `idRaison`, `valeurNote`, `dateNote`, `semestreNote`, `coeffNote`) VALUES
-(1, 1, 1, 1, 18, '2021-01-05', 1, 4),
-(2, 1, 1, 2, 4, '2021-01-11', 2, 2),
-(3, 2, 1, 1, 18, '2021-01-18', 2, 0),
-(4, 2, 1, 2, 20, '2021-01-15', 2, 0);
+(30, 3, 1, 2, 17, '2021-01-04', 1, 8),
+(29, 2, 1, 2, 15, '2021-01-04', 1, 8),
+(28, 1, 1, 2, 12, '2021-01-04', 1, 8),
+(31, 4, 1, 2, 14, '2021-01-04', 1, 8),
+(27, 7, 1, 1, 2, '2021-01-04', 1, 4),
+(26, 6, 1, 1, 14, '2021-01-04', 1, 4),
+(25, 5, 1, 1, 12, '2021-01-04', 1, 4),
+(24, 4, 1, 1, 14, '2021-01-04', 1, 4),
+(23, 3, 1, 1, 17, '2021-01-04', 1, 4),
+(22, 2, 1, 1, 15, '2021-01-04', 1, 4),
+(21, 1, 1, 1, 12, '2021-01-04', 1, 4),
+(32, 5, 1, 2, 12, '2021-01-04', 1, 8),
+(33, 6, 1, 2, 14, '2021-01-04', 1, 8),
+(34, 7, 1, 2, 2, '2021-01-04', 1, 8),
+(35, 1, 1, 1, 12, '2021-01-20', 2, 8),
+(36, 2, 1, 1, 15, '2021-01-20', 2, 8),
+(37, 3, 1, 1, 17, '2021-01-20', 2, 8),
+(38, 4, 1, 1, 14, '2021-01-20', 2, 8),
+(39, 5, 1, 1, 12, '2021-01-20', 2, 8),
+(40, 6, 1, 1, 14, '2021-01-20', 2, 8),
+(41, 7, 1, 1, 2, '2021-01-20', 2, 8),
+(42, 1, 1, 1, 12, '2021-01-20', 2, 8),
+(43, 2, 1, 1, 15, '2021-01-20', 2, 8),
+(44, 3, 1, 1, 17, '2021-01-20', 2, 8),
+(45, 4, 1, 1, 14, '2021-01-20', 2, 8),
+(46, 5, 1, 1, 12, '2021-01-20', 2, 8),
+(47, 6, 1, 1, 14, '2021-01-20', 2, 8),
+(48, 7, 1, 1, 2, '2021-01-20', 2, 8),
+(49, 1, 1, 2, 15, '2021-01-06', 2, 8),
+(50, 2, 1, 2, 12, '2021-01-06', 2, 8),
+(51, 3, 1, 2, 11, '2021-01-06', 2, 8),
+(52, 4, 1, 2, 12, '2021-01-06', 2, 8),
+(53, 5, 1, 2, 14, '2021-01-06', 2, 8),
+(54, 6, 1, 2, 15, '2021-01-06', 2, 8),
+(55, 7, 1, 2, 15, '2021-01-06', 2, 8);
 
 -- --------------------------------------------------------
 
