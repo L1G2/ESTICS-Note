@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<title>Line Chart</title>
-	<script src="../Views/assets/js/Chart.min.js"></script>
-	<script src="../Views/assets/js/utils.js"></script>	
+	<script src="../Assets/js/Chart.min.js"></script>
+	<script src="../Assets/js/utils.js"></script>	
 
 		<div style="width:100%">
 			<div class="chartjs-size-monitor">

@@ -3,19 +3,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>ESTI</title>
-        <link rel="icon" href="../Views/assets/images/fav.png" type="image/png" sizes="16x16"> 
+        <link rel="icon" href="../Assets/images/fav.png" type="image/png" sizes="16x16"> 
         
-        <link rel="stylesheet" href="../Views/assets/css/color.css">
-        <link rel="stylesheet" href="../Views/assets/css/main.min.css">
-        <link rel="stylesheet" href="../Views/assets/css/style.css">
-        <link rel="stylesheet" href="../Views/assets/css/responsive.css">
+        <link rel="stylesheet" href="../Assets/css/color.css">
+        <link rel="stylesheet" href="../Assets/css/main.min.css">
+        <link rel="stylesheet" href="../Assets/css/style.css">
+        <link rel="stylesheet" href="../Assets/css/responsive.css">
     </head>
     <body>
         <div class="theme-layout">
             <div class="responsive-header">
                 <div class="mh-head first Sticky">
                     <span class="mh-btns-left"><a class="" href="#menu"><i class="fa fa-align-justify"></i></a></span>
-                    <span class="mh-text"><img src="../Views/assets/images/logo.png" width="100" alt=""></span>
+                    <span class="mh-text"><img src="../Assets/images/logo.png" width="100" alt=""></span>
                 </div>
                 <div class="mh-head second">
                     <form class="mh-form">
@@ -35,13 +35,13 @@
             
             <div class="topbar stick">
                 <div class="logo">
-                    <img src="../Views/assets/images/logo.png" alt="">
+                    <img src="../Assets/images/logo.png" alt="">
                 </div>
                 <div class="top-area">
                     <ul class="main-menu">
-                        <li><a href="#" title="">Acceuil</a></li>
+                        <li><a href="../Views/welcome.php" title="">Acceuil</a></li>
                         <li><a href="../Views/liste.php" title="">Liste</a></li>
-                        <li><a href="#" title="">Historique</a></li>
+                        <li><a href="" title="">Historique</a></li>
                         <li><a href="../Views/ajout.php" title="">Ajout de note</a></li>
                     </ul>
                     <ul class="setting-area">
@@ -67,7 +67,7 @@
                         </li> -->
                     </ul>
                     <div class="user-img">
-                        <img src="images/resources/admin.jpg" alt="">
+                        <img src="../Assets/images/admin.jpg" alt="">
                         <span class="status f-online"></span>
                         <div class="user-setting">
                             <a href="#" title=""><i class="ti-pencil-alt"></i>Profiles</a>
@@ -162,7 +162,7 @@
                             <div class="widget">
                                 <div class="foot-logo">
                                     <div class="logo">
-                                        <a href="index-2.html" title=""><img src="../Views/assets/images/logo.png" width="100" alt=""></a>
+                                        <a href="index-2.html" title=""><img src="../Assets/images/logo.png" width="100" alt=""></a>
                                     </div>	
                                 </div>
                                 <ul class="location">
@@ -181,9 +181,9 @@
                             <div class="widget">
                                 <div class="widget-title"><h4>Nous suivre</h4></div>
                                 <ul class="list-style">
-                                    <li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/shopcircut/" title="">facebook</a></li>
-                                    <li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en" title="">twitter</a></li>
-                                    <li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+                                    <li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/arleme.scheck/" title="">facebook</a></li>
+                                    <li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=fr" title="">twitter</a></li>
+                                    <li><i class="fa fa-github"></i> <a href="https://www.github.com/L1G2" title="">Google+</a></li>
                                 </ul>
                             </div>
                         </div>

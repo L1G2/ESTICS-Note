@@ -8,9 +8,9 @@
 	<title>ESTI | Note</title>
     <link rel="icon" href="../assets/images/fav.png" type="image/png" sizes="16x16"> 
     
-    <link rel="stylesheet" href="Views/assets/css/main.min.css">
-    <link rel="stylesheet" href="Views/assets/css/style.css">
-    <link rel="stylesheet" href="Views/assets/css/responsive.css">
+    <link rel="stylesheet" href="Assets/css/main.min.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/responsive.css">
 </head>
 <body>
 <!--<div class="se-pre-con"></div>-->
@@ -21,9 +21,9 @@
 				<div class="land-featurearea">
 					<div class="land-meta">
 						<div>
-							<span><img src="Views/assets/images/logo.png" alt="" width="500"></span>
+							<span><img src="Assets/images/logo.png" alt="" width="400"></span>
 						</div>
-						<a href="#" title="" class="folow-me">En savoir plus</a>
+						<a href="https://www.esti.mg" title="" class="folow-me">En savoir plus</a>
 					</div>
 				</div>
 			</div>
@@ -61,7 +61,7 @@
 								?>
 							</span>
 							<div class="submit-btns">
-								<input class="mtr-btn signin" type="submit" value ="Se connecter"/>
+								<button onClick="submit()" class="mtr-btn signup"><span>Se connecter</span></button>
 							</div>
 						</form>
 					</div>
