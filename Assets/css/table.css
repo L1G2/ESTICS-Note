@@ -202,18 +202,6 @@ td {
     -ms-box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15)
 }
 
-.table100.ver1 .ps__rail-y {
-    right: 5px
-}
-
-.table100.ver1 .ps__rail-y::before {
-    background-color: #ebebeb
-}
-
-.table100.ver1 .ps__rail-y .ps__thumb-y::before {
-    background-color: #ccc
-}
-
 .table100.ver2 .table100-head {
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .1);
@@ -269,7 +257,7 @@ td {
 
 .table100.ver3 th {
     font-family: Lato-Bold;
-    font-size: 15px;
+    font-size: 18px;
     color: #00ad5f;
     line-height: 1.4;
     text-transform: uppercase;
@@ -278,7 +266,7 @@ td {
 
 .table100.ver3 td {
     font-family: Lato-Regular;
-    font-size: 15px;
+    font-size: 18px;
     color: gray;
     line-height: 1.4;
     background-color: #222

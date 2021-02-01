@@ -2,13 +2,14 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>ESTI Note | Bienvenu</title>
+        <title><?= $title ?></title>
         <link rel="icon" href="../Assets/images/fav.png" type="image/png" sizes="16x16"> 
         
-        <link rel="stylesheet" href="../Assets/css/color.css">
-        <link rel="stylesheet" href="../Assets/css/main.min.css">
-        <link rel="stylesheet" href="../Assets/css/style.css">
-        <link rel="stylesheet" href="../Assets/css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/color.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/main.min.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="../Assets/css/table.css">
     </head>
     <body>
         <div class="theme-layout">
@@ -16,12 +17,6 @@
                 <div class="mh-head first Sticky">
                     <span class="mh-btns-left"><a class="" href="#menu"><i class="fa fa-align-justify"></i></a></span>
                     <span class="mh-text"><img src="../Assets/images/logo.png" width="100" alt=""></span>
-                </div>
-                <div class="mh-head second">
-                    <form class="mh-form">
-                        <input placeholder="search" />
-                        <a href="#/" class="fa fa-search"></a>
-                    </form>
                 </div>
                 <nav id="menu" class="res-menu">
                     <ul>
@@ -46,34 +41,11 @@
                     </ul>
                     <ul class="setting-area">
                         <li>
-                            <a href="#" title="Home" data-ripple=""><i class="ti-search"></i></a>
-                            <div class="searched">
-                                <form method="post" class="form-search">
-                                    <input type="text" placeholder="Search Friend">
-                                    <button data-ripple><i class="ti-search"></i></button>
-                                </form>
-                            </div>
-                        </li>
-                        <li>
                             <a href="" title="Home" data-ripple=""><i class="ti-home"></i></a>
                         </li>
-                        <!-- <li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
-                            <div class="dropdowns languages">
-                                <a href="#" title=""><i class="ti-check"></i>English</a>
-                                <a href="#" title="">Arabic</a>
-                                <a href="#" title="">Dutch</a>
-                                <a href="#" title="">French</a>
-                            </div>
-                        </li> -->
                     </ul>
                     <div class="user-img">
                         <img src="../Assets/images/admin.jpg" alt="">
-                        <span class="status f-online"></span>
-                        <div class="user-setting">
-                            <a href="#" title=""><i class="ti-pencil-alt"></i>Profiles</a>
-                            <a href="#" title=""><i class="ti-settings"></i>Paramètres</a>
-                            <a href="#" title=""><i class="ti-power-off"></i>Se déconnecter</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -120,33 +92,8 @@
                                                 </ul>
                                             </div>
                                         </aside>
-                                    </div><!-- sidebar -->
-                                    <div class="col-lg-5 ">
-                                        <div class="central-meta">
-                                            <div>
-                                                <h1>Bienvenu Mr Nirina</h1>
-                                                <p>Il est temps de gérer les notes de vos élèves</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="central-meta">
-                                            <h2>Info</h2>
-                                            <ul>
-                                                <li>Meuilleur élèves : Abdoul Ismael</li>
-                                                <li>Moyenne de clase : 12.5/20</li>
-                                                <li>Semestre : 2</li>
-                                                <li>Heure de cours fini: 10 h</li>
-                                                <li>Heure de cours restant: 7 h</li>
-                                            </ul>
-                                        </div>
                                     </div>
-                                    
-                                    <!-- Troisieme collone --> 
-                                    <div class="col-lg-4">
-                                        <aside class="central-meta">
-                                            <?php include('chart.php')?>
-                                        </aside>
-                                    </div>
+                                    <?= $content ?>
                                 </div>	
                             </div>
                         </div>

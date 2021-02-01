@@ -9341,3 +9341,8 @@ aside.sidebar.full-style {
     padding-bottom: 20px;
     color: #103f6e;
 }
+
+.save-note {
+    text-align: right !important;
+    background-color: red;
+}
