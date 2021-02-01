@@ -7,7 +7,7 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>ESTI</title>
+        <title>ESTI Note | Liste</title>
         <link rel="icon" href="../Assets/images/fav.png" type="image/png" sizes="16x16"> 
         
         <link rel="stylesheet" href="../Assets/css/color.css">

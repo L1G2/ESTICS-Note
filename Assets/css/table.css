@@ -123,11 +123,19 @@ td {
 }
 
 .column2 {
-    width: 40%
+    width: 30%
 }
 
 .column3 {
-    width: 10%
+    width: 30%
+}
+.cell-table{
+    padding-top: 0 !important; 
+    padding-bottom: 0 !important;
+}
+.table-input{
+    height: 20px;
+    background-color: red;
 }
 
 .column4 {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-	<title>ESTI | Note</title>
+	<title>ESTI Note | Login </title>
     <link rel="icon" href="../assets/images/fav.png" type="image/png" sizes="16x16"> 
     
     <link rel="stylesheet" href="Assets/css/main.min.css">

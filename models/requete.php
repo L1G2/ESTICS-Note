@@ -10,9 +10,7 @@ require_once("connectDB.php");
 class REQUETE extends CONNECT_BDD
 {
     /*
-
       Cette fonction retourne l'user_name de l'enseignant si a bien été authentifié et false sinon.
-
     */
    public function signIn( $email, $mdp){
 
@@ -31,9 +29,7 @@ class REQUETE extends CONNECT_BDD
    }
 
    /*
-
    La fonction qui va getter la matière de l'utilisateur.
-
    */
 
    public function getMatiere($prenomEnseignant){
@@ -47,11 +43,9 @@ class REQUETE extends CONNECT_BDD
     
    }
    /*
-
         Une fonciton ajoutera un nouvelle enseignant au Base donnée.Il retourne trois tableaux 
         1:Le numéros de tout les etudiants,    2: leur nom etprenom. Ces deux
         tableaux sont regouper dans un seul array
-
    */
    public function getEtudiant(){
        $numEtudiants=array();
@@ -71,10 +65,8 @@ class REQUETE extends CONNECT_BDD
 
  
    /*
-
         Une fonction qui récupère tout le  le raison de la note. Il reoturne dans un tableau 
         tout les raisons de note qui se trouve dans la base de données.
-
    */
 
    public function getRaison (){
@@ -149,7 +141,8 @@ class REQUETE extends CONNECT_BDD
         inner JOIN raison 
         on raison.idRaison= note.idRaison 
         WHERE note.idRaison = 1
-        GROUP BY etudiant.idEtudiant");
+        GROUP BY etudiant.idEtudiant
+        ORDER BY etudiant.idEtudiant");
 
         while ($Ctrl=$getNoteCtrl->fetch()){
                 array_push($num,$Ctrl["Num"]); 
@@ -171,7 +164,8 @@ class REQUETE extends CONNECT_BDD
         inner JOIN raison 
         on raison.idRaison= note.idRaison 
         WHERE note.idRaison = 2
-        GROUP BY etudiant.idEtudiant");
+        GROUP BY etudiant.idEtudiant
+        ORDER BY etudiant.idEtudiant");
 
         while ($Exam=$getNoteExam->fetch()){
                 array_push($num,$Exam["Num"]); 

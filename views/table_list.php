@@ -13,7 +13,9 @@
 							<tr class="row100 head">
 								<th class="cell100 column1">N ͦ </th>
 								<th class="cell100 column2">Nom et Prénom</th>
-								<th class="cell100 column3">Notes</th>
+								<th class="cell100 column3">Controle continue</th>
+								<th class="cell100 column4">Examen semestriel</th>
+								<th class="cell100 column5">Notes</th>
 							</tr>
 						</thead>
 					</table>

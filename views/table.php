@@ -28,7 +28,7 @@
                                 	<tr class="row100 body">
                                 		<td class="cell100 column1">'. $element . '</td>
                                 		<td class="cell100 column2">'. $etudiant[1][$cle] . '</td>
-                                		<td class="cell100 column3"><input type="text" name="'.$element.'" id="" required>
+                                		<td class="cell100 column3 cell-table"><input class="input-table" type="text" name="'.$element.'" id="" required>
                                 		</td> 
                                 	</tr>
                                 	' ;
