@@ -9346,3 +9346,7 @@ aside.sidebar.full-style {
     text-align: right !important;
     background-color: red;
 }
+
+.ajout-input {
+    border-color: #0e0e0e;
+}

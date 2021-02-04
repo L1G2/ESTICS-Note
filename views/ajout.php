@@ -8,7 +8,7 @@
 <?php ob_start(); ?>
 <div class="col-lg-9">
     <div class="central-meta">       
-        <form action="Controller/controller.php?action=ajout_note" method="get">
+        <form action="../Controller/controller.php?action=ajout_note" method="post">
             <h4 class="title-content">Information générale sur la note</h4>
             <div class="form-row">
                 <div class="col">
@@ -31,17 +31,17 @@
                 </div>
                 <div class="col">
                     <label for="inputCoeff">Coefficient</label>
-                    <input class="form-control" type="text" name="coeffNote" id="inputCoeff" required/>
+                    <input class="form-control " type="text" name="coeffNote" id="inputCoeff" required/>
                 </div>
                 <div class="col">
-                    <label for="inputCoeff">Date</label>
-                    <input class="form-control" value type="date" value="" name="dateNote" id="inputCoeff" required/>
+                    <label for="inputDate">Date</label>
+                    <input class="form-control " value type="date" value="" name="dateNote" id="inputDate" required/>
                 </div>
             </div>
             <h4 class="title-content">Note de chaque étudiant</h4>
             <div class="container-table100">
                 <div class="wrap-table100">
-                    <div class="table100 ver2 m-b-110">
+                    <div class="table100 ver1 m-b-110">
                         <div class="table100-head">
                             <table>
                                 <thead>
@@ -65,7 +65,7 @@
                                                 <td class="cell100 column2">'. $etudiant[1][$cle] . '</td>
                                                 <td class="cell100 column3 cell-table">
                                                     <div class="form-group">    
-                                                        <input type="text"  name="'.$element.'" placeholder="insérer note" required/>
+                                                        <input type="text" class="" name="'.$element.'" placeholder="insérer note" required/>
                                                         <i class="mtrl-select"></i>
                                                     </div>
                                                 </td> 

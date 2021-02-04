@@ -11,7 +11,7 @@ session_start();
                 if(preg_match("#^[a-z0-9._-]+@esti.mg#",$email)){
                     $query = new REQUETE;
                     $login = $query->signIn($email, $password);
-                    if($login === false){
+                    if($login == false){
                         header("location:../index.php?action=erreur_identification");
                     }
                     else{
@@ -25,23 +25,26 @@ session_start();
             }
         }
         elseif($action == "ajout_note"){
-            if (isset($_GET["raisons"]) && isset($_GET["semestres"]) && isset($_GET["coeffNote"]) && isset($_GET['dateNote'])){
-                $raison = intval($_GET["raisons"]);
-                $semestre = intval($_GET["semestres"]);
-                $coeffNote  =intval($_GET["coeffNote"]);
-                $dateNote = $_GET['dateNote'];
+            echo "I'm here action";
+            if (isset($_POST["raisons"]) && isset($_POST["semestres"]) && isset($_POST["coeffNote"]) && isset($_POST['dateNote'])){
+                echo "I'm here";
+                $raison = intval($_POST["raisons"]);
+                $semestre = intval($_POST["semestres"]);
+                $coeffNote  =intval($_POST["coeffNote"]);
+                $dateNote = $_POST['dateNote'];
            
-                $request = new REQUETE;
+                $req = new REQUETE;
                 $etudiant =$req-> getEtudiant();
            
                 $idEtudiant=$etudiant[0];
 
                 foreach($idEtudiant as $cle => $element)
                 {
-                    if (isset($_GET[$element])){
+                    if (isset($_POST[$element])){
                        $idMatiere =$req-> getidMatiere($_SESSION["username"]);
-                       $valeurNote=intval($_GET[$element]);
+                       $valeurNote=intval($_POST[$element]);
                        $req -> insertNote($raison, $coeffNote,$semestre, $element,$idMatiere,$dateNote, $valeurNote );
+                       header("location:../Views/ajout.php?action=success");
            
                    }
                 }
@@ -51,4 +54,3 @@ session_start();
             }
         }
     }
-    

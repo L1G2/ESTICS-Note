@@ -129,13 +129,10 @@ td {
 .column3 {
     width: 30%
 }
-.cell-table{
-    padding-top: 0 !important; 
+
+.cell-table {
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
-}
-.table-input{
-    height: 20px;
-    background-color: red;
 }
 
 .column4 {
@@ -178,7 +175,7 @@ td {
     font-size: 18px;
     color: #fff;
     line-height: 1.4;
-    background-color: #6c7ae0
+    background-color: #4272d7
 }
 
 .table100.ver1 td {
@@ -213,7 +210,7 @@ td {
 .table100.ver2 th {
     font-family: Lato-Bold;
     font-size: 18px;
-    color: #fa4251;
+    color: #4272d7;
     line-height: 1.4;
     background-color: transparent
 }
