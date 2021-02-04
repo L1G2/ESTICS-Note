@@ -415,3 +415,7 @@ td {
 .table100.ver5 .table100-body {
     padding-right: 30px
 }
+
+.str1, .str2, .str3, .str4{
+    width: 25%!important;
+}

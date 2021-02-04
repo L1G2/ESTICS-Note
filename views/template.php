@@ -36,7 +36,7 @@
                     <ul class="main-menu">
                         <li><a href="../Views/welcome.php" title="">Acceuil</a></li>
                         <li><a href="../Views/liste.php" title="">Liste</a></li>
-                        <li><a href="" title="">Historique</a></li>
+                        <li><a href="../Views/story.php" title="">Historique</a></li>
                         <li><a href="../Views/ajout.php" title="">Ajout de note</a></li>
                     </ul>
                     <ul class="setting-area">

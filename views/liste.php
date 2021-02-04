@@ -33,7 +33,6 @@
 
                                         $ctrlContinue=$req-> getNoteCtrl();
                                         $examenFinal =$req->getNoteExam();
-                                        
                                         foreach($ctrlContinue[0] as $cle => $element){
                                             $found = array_search($element, $examenFinal[0]);			
                                             if ($found !== false) {

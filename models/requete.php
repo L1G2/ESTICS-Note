@@ -35,7 +35,7 @@ class REQUETE extends CONNECT_BDD
    public function getMatiere($prenomEnseignant){
 
     $bdd =$this -> dbConnect();
-    $sql = $bdd -> prepare ("SELECT codeMatiere FROM matiere INNER JOIN enseignant ON enseignant.idMatiere=matiere.idMatiere WHERE enseignant.prenomEnseignant=?");
+    $sql = $bdd -> prepare ("SELECT codeMatiere FROM matiere INNER JOIN enseignant ON enseignant.idMatiere=matiere.id WHERE enseignant.prenomEnseignant=?");
     $sql -> execute(array($prenomEnseignant));
     $info =$sql->fetch()[0];
     return $info;
@@ -52,11 +52,11 @@ class REQUETE extends CONNECT_BDD
        $nom_prenomEtudiants= array();
 
        $bdd=$this->dbConnect();
-       $getEtudiant = $bdd->query("SELECT idEtudiant,CONCAT(nomEtudiant,' ' , prenomEtudiant) as nom_prenomEtudiant  FROM etudiant");
+       $getEtudiant = $bdd->query("SELECT id,CONCAT(nomEtudiant,' ' , prenomEtudiant) as nom_prenomEtudiant  FROM etudiant");
 
 
        while ($raison=$getEtudiant->fetch()){
-            array_push($numEtudiants,$raison["idEtudiant"]);  
+            array_push($numEtudiants,$raison["id"]);  
             array_push($nom_prenomEtudiants,$raison["nom_prenomEtudiant"]);  
         } 
 
@@ -78,7 +78,7 @@ class REQUETE extends CONNECT_BDD
 
        while ($raison=$getRaison->fetch()){
                 array_push($raisons,$raison["nomRaison"]); 
-                array_push ($idRaisons,$raison["idRaison"]);      
+                array_push ($idRaisons,$raison["id"]);      
        }
        return  [$idRaisons,$raisons];
        
@@ -134,15 +134,15 @@ class REQUETE extends CONNECT_BDD
         $valeurNote=array();
         $bdd = $this->dbConnect();
         $getNoteCtrl= $bdd -> query ("
-        SELECT etudiant.idEtudiant as Num ,CONCAT(prenomEtudiant,' ',nomEtudiant )as 'Nom et prenom' , AVG(note.valeurNote) AS valeurNote 
-        from etudiant 
-        inner JOIN note 
-        on note.idEtudiant=etudiant.idEtudiant 
-        inner JOIN raison 
-        on raison.idRaison= note.idRaison 
+        SELECT etudiant.id as Num ,CONCAT(prenomEtudiant,' ',nomEtudiant )as 'Nom et prenom' , AVG(note.valeurNote) AS valeurNote 
+        FROM etudiant 
+        INNER JOIN note 
+        ON note.idEtudiant=etudiant.id 
+        INNER JOIN raison 
+        on raison.id = note.idRaison 
         WHERE note.idRaison = 1
-        GROUP BY etudiant.idEtudiant
-        ORDER BY etudiant.idEtudiant");
+        GROUP BY etudiant.id
+        ORDER BY etudiant.id");
 
         while ($Ctrl=$getNoteCtrl->fetch()){
                 array_push($num,$Ctrl["Num"]); 
@@ -157,15 +157,15 @@ class REQUETE extends CONNECT_BDD
         $valeurNote=array();
         $bdd = $this->dbConnect();
         $getNoteExam= $bdd -> query ("
-        SELECT etudiant.idEtudiant as Num ,CONCAT(prenomEtudiant,' ',nomEtudiant )as 'Nom et prenom' ,raison.nomRaison, AVG(note.valeurNote) AS valeurNote 
+        SELECT etudiant.id as Num ,CONCAT(prenomEtudiant,' ',nomEtudiant )as 'Nom et prenom' ,raison.nomRaison, AVG(note.valeurNote) AS valeurNote 
         from etudiant 
         inner JOIN note 
-        on note.idEtudiant=etudiant.idEtudiant 
+        on note.idEtudiant=etudiant.id 
         inner JOIN raison 
-        on raison.idRaison= note.idRaison 
+        on raison.id= note.idRaison 
         WHERE note.idRaison = 2
-        GROUP BY etudiant.idEtudiant
-        ORDER BY etudiant.idEtudiant");
+        GROUP BY etudiant.id
+        ORDER BY etudiant.id");
 
         while ($Exam=$getNoteExam->fetch()){
                 array_push($num,$Exam["Num"]); 
@@ -174,9 +174,28 @@ class REQUETE extends CONNECT_BDD
         }
         return  [$num,$nom_prenom,$valeurNote];
 
+  }
 
-}
+  public function getStory (){
 
+        $date_ajout = array();
+        $date_controle = array();
+        $type = array();
+        $moyenne_classe = array();
 
+        $bdd = $this->dbConnect();
+        $getStory = $bdd -> query ("
+        SELECT note.dt_hr_ajout as 'Date_ajout', note.dateNote as 'Date_controle', raison.nomRaison as 'Type', 
+        AVG(note.valeurNote) AS 'Moyenne' 
+        FROM note INNER JOIN raison ON note.idRaison = raison.id 
+        GROUP BY note.dt_hr_ajout ORDER BY note.dt_hr_ajout");
 
+        while ($story=$getStory->fetch()){
+                array_push($date_ajout, $story["Date_ajout"]); 
+                array_push($date_controle, $story["Date_controle"]);
+                array_push($type, $story["Type"]) ;
+                array_push ($moyenne_classe, $story["Moyenne"]);      
+        }
+        return  [$date_ajout,$date_controle,$type,$moyenne_classe];
+  }
 }
